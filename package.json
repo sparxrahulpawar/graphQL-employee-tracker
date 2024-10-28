@@ -1,0 +1,29 @@
+{
+  "name": "graphql-expensetracker",
+  "version": "1.0.0",
+  "description": "- [Introduction](#introduction)\r - [Features](#features)\r - [Tech Stack](#tech-stack)\r - [Getting Started](#getting-started)\r - [Project Structure](#project-structure)\r - [GraphQL API](#graphql-api)\r - [Available Scripts](#available-scripts)\r - [Contributing](#contributing)\r - [License](#license)",
+  "main": "index.js",
+  "scripts": {
+   "start": "node backend/index.js",
+   "dev": "nodemon backend/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@apollo/server": "^4.11.0",
+    "@graphql-tools/merge": "^9.0.8",
+    "bcryptjs": "^2.4.3",
+    "connect-mongodb-session": "^5.0.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "express-session": "^1.18.1",
+    "graphql": "^16.9.0",
+    "graphql-passport": "^0.6.8",
+    "mongoose": "^8.7.2",
+    "passport": "^0.7.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
