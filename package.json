@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "- [Introduction](#introduction)\r - [Features](#features)\r - [Tech Stack](#tech-stack)\r - [Getting Started](#getting-started)\r - [Project Structure](#project-structure)\r - [GraphQL API](#graphql-api)\r - [Available Scripts](#available-scripts)\r - [Contributing](#contributing)\r - [License](#license)",
   "main": "index.js",
+  "type": "module",
   "scripts": {
    "start": "node backend/index.js",
    "dev": "nodemon backend/index.js"
