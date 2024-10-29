@@ -6,6 +6,7 @@ import http from "http";
 import cors from "cors";
 import mergedResolvers from "./resolvers/index.js";
 import mergedTypeDefs from "./typeDefs/index.js";
+import { connectDB } from "./db/connectDB.js";
 
 const app = express();
 
@@ -27,6 +28,8 @@ app.use(
     context: async ({ req }) => ({ req }),
   })
 );
+
+await connectDB();
 
 await new Promise((resolve) => httpServer.listen({ port: 4000 }, resolve));
 console.log(`🚀 Server ready at http://localhost:4000/`);
