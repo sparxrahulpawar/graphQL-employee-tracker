@@ -1,8 +1,8 @@
-import Transaction from "../models/transaction.model";
+import Transaction from "../models/transaction.model.js";
 
 const transactionResolver = {
   Query: {
-    transactions: async (_, _, context) => {
+    transactions: async (_, __, context) => {
       try {
         if (!context.getUser()) {
           throw new Error("Unauthorized!");
@@ -27,7 +27,7 @@ const transactionResolver = {
     },
   },
   Mutation: {
-    createTransaction: async (parent, { input }, context) => {
+    createTransaction: async (_, { input }, context) => {
       try {
         const newTransaction = await Transaction({
           ...input,
@@ -40,7 +40,7 @@ const transactionResolver = {
         throw new Error(error.message || "Internal server error");
       }
     },
-    updateTransaction: async (parent, { input }) => {
+    updateTransaction: async (_, { input }) => {
       try {
         const updatedTransaction = await Transaction.findByIdAndUpdate(
           input.transactionId,
@@ -53,7 +53,7 @@ const transactionResolver = {
         throw new Error(error.message || "Internal server error");
       }
     },
-    deleteTransaction: async (parent, { transactionId }) => {
+    deleteTransaction: async (_, { transactionId }) => {
       try {
         const deletedTransaction = await Transaction.findByIdAndDelete(
           transactionId
