@@ -9,7 +9,7 @@ const userTypeDef = `#graphql
   }
 
   type Query {
-    users:[User!]
+    # users:[User!] # this is add only for to check in the GraphQL UI
     authUser: User
     user(userId:ID!): User
   }
